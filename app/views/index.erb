@@ -1,0 +1,16 @@
+<div class="container">
+
+  <% if current_user %>
+    Other Users
+    <% print_users %>
+    <% @users.each do |user| %> 
+      <% if user.name.downcase != @logged_in_user.name.downcase %>
+        <p><%= user.name %></p>
+      <% end %>
+    <% end %>
+
+  <% else %>
+    <p>Welcome!</p>
+  <% end %> 
+
+</div>
